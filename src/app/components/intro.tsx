@@ -9,8 +9,9 @@ const Intro = () => {
       <div className='mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row-reverse'>
         <div className='mx-auto'>
           <Image
-            className='mx-auto rounded-full object-cover ~size-32/80 border border-black'
+            className='mx-auto rounded-full border border-black object-cover ~size-32/80'
             src={profile_pic}
+            placeholder='blur'
             alt='Victor Akhihiero'
           />
         </div>
@@ -20,7 +21,7 @@ const Intro = () => {
             I'm <span className=''>Victor</span>
           </h1>
           <h3 className='mb-8 font-bold ~text-3xl/6xl'>Website Developer</h3>
-          <p className='mb-12 max-w-[80ch] text-gray-700 mx-auto sm:mx-0'>
+          <p className='mx-auto mb-12 max-w-[80ch] text-gray-700 sm:mx-0'>
             I am a skilled and passionate web developer with experience in
             creating visually appealing and user-friendly websites.
           </p>
@@ -42,14 +43,6 @@ const Intro = () => {
             </a>
           </div>
         </div>
-
-        {/* <div className='mx-auto'>
-          <Image
-            className='mx-auto rounded-full object-cover ~size-56/80'
-            src={profile_pic}
-            alt='Victor Akhihiero'
-          />
-        </div> */}
       </div>
     </section>
   );
