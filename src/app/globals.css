@@ -22,7 +22,7 @@ body {
 
 @layer utilities {
   .padding-inline {
-    @apply px-5;
+    @apply px-5 sm:~px-8/20;
   }
   
   .text-balance {
