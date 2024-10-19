@@ -17,9 +17,7 @@ const Intro = () => {
         </div>
         <div className='text-center sm:text-left'>
           <h2 className='text-medium mb-2 ~text-lg/xl'>Hello,</h2>
-          <h1 className='mb-2 font-bold ~text-3xl/6xl'>
-            I&apos;m Victor
-          </h1>
+          <h1 className='mb-2 font-bold ~text-3xl/6xl'>I&apos;m Victor</h1>
           <h3 className='mb-8 font-bold ~text-3xl/6xl'>Website Developer</h3>
           <p className='mx-auto mb-12 max-w-[80ch] text-gray-700 sm:mx-0'>
             I am a skilled and passionate web developer with experience in
@@ -27,7 +25,8 @@ const Intro = () => {
           </p>
           <div className='flex items-center justify-center ~gap-5/8 sm:justify-start'>
             <a
-              href='#'
+              href='https://cal.com/victor-akhihiero/meet-30min'
+              target='_blank'
               className='flex w-fit items-center justify-center gap-2 rounded-full border py-2 transition duration-500 ~px-3/6 hover:border-black'
             >
               Hire me
@@ -36,6 +35,7 @@ const Intro = () => {
             <a
               download='VICTOR AKHIHIERO.pdf'
               href='/victor-akhihiero.pdf'
+              target='_blank'
               className='flex w-fit items-center justify-center gap-2 rounded-full border py-2 transition duration-500 ~px-3/6 hover:border-black'
             >
               Download CV
