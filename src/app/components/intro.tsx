@@ -18,7 +18,7 @@ const Intro = () => {
         <div className='text-center sm:text-left'>
           <h2 className='text-medium mb-2 ~text-lg/xl'>Hello,</h2>
           <h1 className='mb-2 font-bold ~text-3xl/6xl'>
-            I'm Victor
+            I&apos;m Victor
           </h1>
           <h3 className='mb-8 font-bold ~text-3xl/6xl'>Website Developer</h3>
           <p className='mx-auto mb-12 max-w-[80ch] text-gray-700 sm:mx-0'>
