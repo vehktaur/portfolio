@@ -1,19 +1,11 @@
-import Image from 'next/image';
+import { Logo } from '../assets/svgs';
 
 const Header = () => {
   return (
-    <header className='padding-inline py-5 shadow-sm'>
+    <header className='padding-inline py-6 shadow-sm'>
       <div className='mx-auto flex max-w-7xl items-center'>
         {/* Logo */}
-        <div className='w-auto'>
-          <Image
-            className='w-full ~max-w-[6rem]/[8rem] object-contain'
-            src='/logo.png'
-            alt='logo'
-            width={960}
-            height={480}
-          />
-        </div>
+        <Logo className='w-full object-contain ~max-w-28/40' />
       </div>
     </header>
   );
