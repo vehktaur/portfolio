@@ -1,6 +1,7 @@
-import profile_pic from '@/app/assets/profile.jpg';
+import profile_pic from '@/assets/profile.jpg';
 import { LuBriefcaseBusiness, LuDownload } from 'react-icons/lu';
 import Image from 'next/image';
+import { Button } from './ui/button';
 
 const Intro = () => {
   return (
@@ -23,23 +24,26 @@ const Intro = () => {
             creating visually appealing and user-friendly websites.
           </p>
           <div className='flex items-center justify-center ~gap-5/8 sm:justify-start'>
-            <a
-              href='https://cal.com/victor-akhihiero/meet-30min'
-              target='_blank'
-              className='flex w-fit items-center justify-center gap-2 rounded-full border py-2 transition duration-500 ~px-3/6 hover:border-black'
-            >
-              Hire me
-              <LuBriefcaseBusiness className='mt-1 size-4' />
-            </a>
-            <a
-              download='VICTOR AKHIHIERO.pdf'
-              href='/victor_akhihiero.pdf'
-              target='_blank'
-              className='flex w-fit items-center justify-center gap-2 rounded-full border py-2 transition duration-500 ~px-3/6 hover:border-black'
-            >
-              Download CV
-              <LuDownload className='size-4' />
-            </a>
+            <Button asChild>
+              <a
+                href='https://cal.com/victor-akhihiero/meet-30min'
+                target='_blank'
+              >
+                Hire me
+                <LuBriefcaseBusiness className='mt-1' />
+              </a>
+            </Button>
+
+            <Button asChild>
+              <a
+                download='VICTOR AKHIHIERO.pdf'
+                href='/victor_akhihiero.pdf'
+                target='_blank'
+              >
+                Download CV
+                <LuDownload />
+              </a>
+            </Button>
           </div>
         </div>
       </div>
