@@ -36,7 +36,7 @@ const Projects = () => {
 
   return (
     <main className='full-page z-[4]'>
-      <section className='padding-inline overflow-x-hidden'>
+      <section className='padding-inline overflow-x-clip'>
         <div className='container flex flex-col items-center justify-around gap-4 sm:flex-row-reverse'>
           {/* Swiper with slides showing project image */}
           <div className='w-full max-w-[30rem]'>
@@ -49,16 +49,20 @@ const Projects = () => {
             >
               {projects.map((project) => (
                 <SwiperSlide className='' key={project.num}>
-                  <div className='overflow-hidden rounded-lg border'>
+                  <Link
+                    href={project.url}
+                    target='_blank'
+                    className='block overflow-hidden rounded-lg border'
+                  >
                     <Image
-                      className='size-full object-cover'
+                      className='size-full cursor-pointer object-cover transition-transform duration-700 hover:scale-150'
                       src={project.image}
                       alt={project.title}
                       width={1980}
                       height={1080}
                       placeholder='blur'
                     />
-                  </div>
+                  </Link>
                 </SwiperSlide>
               ))}
 
