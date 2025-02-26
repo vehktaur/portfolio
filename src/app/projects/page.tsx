@@ -36,11 +36,12 @@ const Projects = () => {
 
   return (
     <main className='full-page z-[4]'>
-      <section className='padding-inline overflow-x-clip'>
-        <div className='container flex flex-col items-center justify-around gap-4 sm:flex-row-reverse'>
+      <section className='padding-inline my-12 overflow-x-clip'>
+        <div className='container flex flex-col items-center justify-around gap-x-4 gap-y-8 sm:flex-row-reverse'>
           {/* Swiper with slides showing project image */}
-          <div className='w-full max-w-[30rem]'>
+          <div className='w-full sm:w-1/2'>
             <Swiper
+              className='max-w-xl'
               autoHeight
               onSlideChange={handleSlideChange}
               modules={[Pagination, Navigation]}
@@ -66,12 +67,15 @@ const Projects = () => {
                 </SwiperSlide>
               ))}
 
+              {/* previous and next navigation */}
               <ProjectNav />
             </Swiper>
           </div>
 
+          <hr className=' mx-auto h-[3px] flex-shrink-0 sm:h-40 sm:w-[3px] w-1/2 rounded-full border-none bg-primary' />
+
           {/* Project Details */}
-          <div className='overflow-clip [overflow-clip-margin:5rem;]'>
+          <div className='overflow-clip [overflow-clip-margin:3rem;]'>
             <AnimatePresence mode='wait'>
               <motion.div
                 key={project.num}
@@ -90,7 +94,9 @@ const Projects = () => {
                   {project.title}
                 </h1>
                 {/* project description */}
-                <p className='max-w-[60ch] ~mb-4/7'>{project.description}</p>
+                <p className='max-w-[60ch] ~text-sm/base ~mb-4/7'>
+                  {project.description}
+                </p>
 
                 {/* technologies used */}
                 <ul className='flex max-w-[60ch] flex-wrap items-center gap-3 text-sm'>
