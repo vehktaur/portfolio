@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 const stairVariant = {
   initial: {
-    top: '0%',
+    top: 0,
   },
   enter: {
     top: '100%',
@@ -14,7 +14,7 @@ const stairVariant = {
   },
 };
 
-const Stairs = ({ numberOfSteps = 6 }) => {
+const Stairs = ({ numberOfSteps = 5 }) => {
   return (
     <>
       {Array.from({ length: numberOfSteps }).map((_, index) => (
@@ -27,7 +27,7 @@ const Stairs = ({ numberOfSteps = 6 }) => {
           transition={{
             duration: 0.4,
             ease: 'easeInOut',
-            delay: 0.1 * (numberOfSteps - index - 1),
+            delay: 0.1 * (numberOfSteps - index),
           }}
           className='relative size-full bg-primary'
         />

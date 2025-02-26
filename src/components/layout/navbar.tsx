@@ -23,8 +23,8 @@ const Navbar = () => {
           {navLinks.map(({ name, href }) => (
             <li key={href}>
               <NavLink
-                className='relative block after:absolute after:right-1/2 after:top-full after:h-[2px] after:w-0 after:translate-x-1/2 after:rounded-full after:bg-zinc-800 after:transition-all after:duration-300'
-                activeClassName='after:w-3/4'
+                className='relative block font-medium after:absolute after:right-1/2 after:top-[110%] after:h-[2px] after:w-0 after:translate-x-1/2 after:rounded-full after:bg-zinc-800 transition-all duration-300 hover:text-accent'
+                activeClassName='after:w-3/4 hover:text-primary'
                 href={href}
                 exact
               >

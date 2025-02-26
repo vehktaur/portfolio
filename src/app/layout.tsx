@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
+
+// style imports
 import './globals.css';
+import 'swiper/css';
+
+// component imports
 import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 import PageTransition from '@/components/layout/page-transition';
