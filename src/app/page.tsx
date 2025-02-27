@@ -21,7 +21,7 @@ export default function Home() {
             <h2 className='text-medium mb-2 ~text-lg/xl'>Hello,</h2>
             <h1 className='mb-2 font-bold ~text-3xl/6xl'>I&apos;m Victor</h1>
 
-            <h3 className='mx-auto sm:mx-0 mb-8 max-w-[17ch] font-bold ~text-3xl/6xl'>
+            <h3 className='mx-auto sm:mx-0 mb-8 max-w-[18ch] font-bold ~text-3xl/6xl'>
               <TypewriterText />
             </h3>
             <p className='mx-auto mb-12 max-w-[50ch] text-neutral-800 ~text-base/lg sm:mx-0'>

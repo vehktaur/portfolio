@@ -5,20 +5,20 @@ import TypeIt from 'typeit-react';
 const TypewriterText = () => {
   return (
     <TypeIt
-      options={{ speed: 100, startDelay: 1200, loopDelay: 1200 }}
+      options={{
+        speed: 200,
+        startDelay: 1600,
+        loopDelay: 1200,
+        deleteSpeed: 100,
+      }}
       getBeforeInit={(instance) => {
         instance
           .type('Web Developer', { delay: 100 })
           .pause(1500)
-          .move(-10, { speed: 200 })
-          .pause(409)
-          .delete(8)
-          .pause(145)
-          .delete(8)
-          .pause(178)
-          .delete(8)
-          .pause(670)
-          .type('Frontend', { delay: 100 })
+          .move(-9, { speed: 200 })
+          .delete(9)
+          .pause(1500)
+          .type('Frontend ', { delay: 100 })
           .pause(1000)
           .move(10, { speed: 200 })
           .type(' (React.js)', { delay: 100 })
