@@ -2,6 +2,7 @@ import { LuBriefcaseBusiness, LuDownload } from 'react-icons/lu';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import images from '@/assets/images';
+import TypewriterText from '@/components/animated-intro-text';
 
 export default function Home() {
   return (
@@ -19,7 +20,10 @@ export default function Home() {
           <div className='text-center sm:text-left'>
             <h2 className='text-medium mb-2 ~text-lg/xl'>Hello,</h2>
             <h1 className='mb-2 font-bold ~text-3xl/6xl'>I&apos;m Victor</h1>
-            <h3 className='mb-8 font-bold ~text-3xl/6xl'>Website Developer</h3>
+
+            <h3 className='mx-auto sm:mx-0 mb-8 max-w-[17ch] font-bold ~text-3xl/6xl'>
+              <TypewriterText />
+            </h3>
             <p className='mx-auto mb-12 max-w-[50ch] text-neutral-800 ~text-base/lg sm:mx-0'>
               I am a skilled and passionate web developer with experience in
               creating visually appealing and user-friendly websites.
