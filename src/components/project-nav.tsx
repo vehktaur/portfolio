@@ -25,7 +25,7 @@ const ProjectNav = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        'absolute left-0 top-[calc(50%-2rem)] z-[5] mt-4 flex w-full items-center justify-between gap-6 text-sm font-medium sm:relative sm:justify-end',
+        'absolute left-0 top-[calc(50%-2rem)] z-[5] mt-4 flex w-full items-center justify-between text-sm font-medium sm:relative sm:justify-end sm:~gap-3/6',
         className,
       )}
     >
@@ -33,12 +33,12 @@ const ProjectNav = ({ className }: { className?: string }) => {
         <button
           key={btn.id}
           className={cn(
-            'grid place-items-center rounded-lg bg-zinc-700 text-white ~size-8/10',
+            'grid h-8 w-6 place-items-center rounded bg-zinc-700 text-white sm:rounded-lg sm:~size-8/10',
             btn.className,
           )}
           onClick={btn.onClick}
         >
-          <GiHarpoonChain className={cn('size-4', btn.iconClassName)} />
+          <GiHarpoonChain className={cn('~size-3/4', btn.iconClassName)} />
         </button>
       ))}
     </div>

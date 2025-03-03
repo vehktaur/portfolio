@@ -17,6 +17,18 @@ import Image from 'next/image';
 import { Swiper as SwiperProps } from 'swiper/types';
 import { AnimatePresence, motion } from 'motion/react';
 import ProjectNav from '@/components/project-nav';
+import { Ubuntu, DM_Sans } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
+const ubuntu = Ubuntu({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+});
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
 
 const Projects = () => {
   const [project, setProject] = useState(projects[0]);
@@ -72,7 +84,7 @@ const Projects = () => {
             </Swiper>
           </div>
 
-          <hr className=' mx-auto h-[3px] flex-shrink-0 sm:h-40 sm:w-[3px] w-1/2 rounded-full border-none bg-primary' />
+          <hr className='mx-auto h-[3px] w-1/2 flex-shrink-0 rounded-full border-none bg-primary sm:h-40 sm:w-[3px]' />
 
           {/* Project Details */}
           <div className='overflow-clip [overflow-clip-margin:3rem;]'>
@@ -90,7 +102,12 @@ const Projects = () => {
                 </h2>
 
                 {/* project title */}
-                <h1 className='font-semibold text-accent ~text-3xl/6xl ~mb-2/4'>
+                <h1
+                  className={cn(
+                    'font-semibold tracking-tight text-accent ~text-3xl/6xl ~mb-2/4',
+                    dmSans.className,
+                  )}
+                >
                   {project.title}
                 </h1>
                 {/* project description */}
@@ -99,7 +116,12 @@ const Projects = () => {
                 </p>
 
                 {/* technologies used */}
-                <ul className='flex max-w-[60ch] flex-wrap items-center gap-3 text-sm'>
+                <ul
+                  className={cn(
+                    'flex max-w-[60ch] flex-wrap items-center gap-3 text-sm',
+                    ubuntu.className,
+                  )}
+                >
                   {project.technologies.map((tech, index) => (
                     <li
                       className='rounded-md border border-primary bg-primary capitalize text-primary-foreground transition-colors duration-300 ~p-1/1.5 hover:bg-primary-foreground hover:text-primary'

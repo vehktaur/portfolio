@@ -11,7 +11,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className='padding-inline py-6 shadow-sm'>
+    <header className='padding-inline py-6'>
       <nav className='mx-auto flex max-w-7xl items-center justify-between'>
         {/* Logo */}
         <Link href='/'>
