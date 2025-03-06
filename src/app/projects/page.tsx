@@ -12,7 +12,7 @@ import { useState } from 'react';
 import { LuExternalLink } from 'react-icons/lu';
 import { FaGithub } from 'react-icons/fa6';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Keyboard, Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import { Swiper as SwiperProps } from 'swiper/types';
 import { AnimatePresence, motion } from 'motion/react';
@@ -47,8 +47,11 @@ const Projects = () => {
   };
 
   return (
-    <main className='full-page z-[4]'>
-      <section className='padding-inline my-12 overflow-x-clip'>
+    <main className='full-page relative z-[4]'>
+      <h1 className='absolute inset-x-0 top-2 text-center font-extrabold transition-all duration-300 ~text-3xl/5xl hover:drop-shadow-2xl'>
+        Projects.
+      </h1>
+      <section className='padding-inline mt-24 overflow-x-clip pb-5 sm:mt-16'>
         <div className='container flex flex-col items-center justify-around gap-x-4 gap-y-8 sm:flex-row-reverse'>
           {/* Swiper with slides showing project image */}
           <div className='w-full sm:w-1/2'>
@@ -56,9 +59,10 @@ const Projects = () => {
               className='max-w-xl'
               autoHeight
               onSlideChange={handleSlideChange}
-              modules={[Pagination, Navigation]}
+              modules={[Pagination, Keyboard]}
               spaceBetween={70}
               slidesPerView={1}
+              keyboard
             >
               {projects.map((project) => (
                 <SwiperSlide className='' key={project.num}>
@@ -83,9 +87,7 @@ const Projects = () => {
               <ProjectNav />
             </Swiper>
           </div>
-
           <hr className='mx-auto h-[3px] w-1/2 flex-shrink-0 rounded-full border-none bg-primary sm:h-40 sm:w-[3px]' />
-
           {/* Project Details */}
           <div className='overflow-clip [overflow-clip-margin:3rem;]'>
             <AnimatePresence mode='wait'>
@@ -132,7 +134,7 @@ const Projects = () => {
                   ))}
                 </ul>
 
-                <hr className='mb-8 mt-6 h-[1.5px] w-1/2 rounded-full border-none bg-primary' />
+                <hr className='mb-8 mt-6 h-[1.5px] w-1/3 rounded-full border-none bg-primary sm:w-1/2' />
 
                 {/* live url and github link */}
                 <div className='flex items-center gap-4'>

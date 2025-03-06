@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { useSwiper } from 'swiper/react';
-import { GiHarpoonChain } from 'react-icons/gi';
+import { LuChevronRight, LuChevronLeft } from 'react-icons/lu';
 
 const ProjectNav = ({ className }: { className?: string }) => {
   const swiper = useSwiper();
@@ -11,14 +11,12 @@ const ProjectNav = ({ className }: { className?: string }) => {
     {
       id: 'previous',
       onClick: () => swiper.slidePrev(),
-      className: '',
-      iconClassName: 'rotate-[135deg]',
+      Icon: LuChevronLeft,
     },
     {
       id: 'next',
       onClick: () => swiper.slideNext(),
-      className: '',
-      iconClassName: '-rotate-45',
+      Icon: LuChevronRight,
     },
   ];
 
@@ -29,16 +27,15 @@ const ProjectNav = ({ className }: { className?: string }) => {
         className,
       )}
     >
-      {navButtons.map((btn) => (
+      {navButtons.map(({ id, onClick, Icon }) => (
         <button
-          key={btn.id}
+          key={id}
           className={cn(
-            'grid h-8 w-6 place-items-center rounded bg-zinc-700 text-white sm:rounded-lg sm:~size-8/10',
-            btn.className,
+            'grid bg-black/50 text-white place-items-center rounded sm:rounded-lg ~size-8/10',
           )}
-          onClick={btn.onClick}
+          onClick={onClick}
         >
-          <GiHarpoonChain className={cn('~size-3/4', btn.iconClassName)} />
+          <Icon className={cn('~size-6/8')} />
         </button>
       ))}
     </div>
