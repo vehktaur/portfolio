@@ -12,11 +12,13 @@ const ProjectNav = ({ className }: { className?: string }) => {
       id: 'previous',
       onClick: () => swiper.slidePrev(),
       Icon: LuChevronLeft,
+      disabled: swiper.isBeginning,
     },
     {
       id: 'next',
       onClick: () => swiper.slideNext(),
       Icon: LuChevronRight,
+      disabled: swiper.isEnd,
     },
   ];
 
@@ -27,11 +29,12 @@ const ProjectNav = ({ className }: { className?: string }) => {
         className,
       )}
     >
-      {navButtons.map(({ id, onClick, Icon }) => (
+      {navButtons.map(({ id, onClick, Icon, disabled }) => (
         <button
+          disabled={disabled}
           key={id}
           className={cn(
-            'grid bg-black/50 text-white place-items-center rounded sm:rounded-lg ~size-8/10',
+            'grid place-items-center rounded bg-black/50 text-secondary ~size-8/10 disabled:cursor-not-allowed disabled:opacity-50 sm:rounded-lg sm:bg-black/10 sm:text-primary',
           )}
           onClick={onClick}
         >

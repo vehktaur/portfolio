@@ -51,13 +51,12 @@ const Projects = () => {
       <h1 className='absolute inset-x-0 top-2 text-center font-extrabold transition-all duration-300 ~text-3xl/5xl hover:drop-shadow-2xl'>
         Projects.
       </h1>
-      <section className='padding-inline mt-24 overflow-x-clip pb-5 sm:mt-16'>
+      <section className='padding-inline ~mt-12/24 overflow-x-clip pb-5 sm:mt-16'>
         <div className='container flex flex-col items-center justify-around gap-x-4 gap-y-8 sm:flex-row-reverse'>
           {/* Swiper with slides showing project image */}
           <div className='w-full sm:w-1/2'>
             <Swiper
               className='max-w-xl'
-              autoHeight
               onSlideChange={handleSlideChange}
               modules={[Pagination, Keyboard]}
               spaceBetween={70}
@@ -69,10 +68,10 @@ const Projects = () => {
                   <Link
                     href={project.url}
                     target='_blank'
-                    className='block overflow-hidden rounded-lg border'
+                    className='link-cursor block overflow-hidden rounded-lg border'
                   >
                     <Image
-                      className='size-full cursor-pointer object-cover transition-transform duration-700 hover:scale-150'
+                      className='size-full object-cover transition-transform duration-700 hover:scale-150'
                       src={project.image}
                       alt={project.title}
                       width={1980}
@@ -99,7 +98,7 @@ const Projects = () => {
                 transition={{ ease: 'easeInOut' }}
               >
                 {/* project number */}
-                <h2 className='mb-4 font-extrabold ~text-xl/4xl'>
+                <h2 className='font-extrabold ~text-xl/4xl ~mb-2/4'>
                   {project.num}
                 </h2>
 
