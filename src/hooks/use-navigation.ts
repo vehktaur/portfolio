@@ -1,4 +1,4 @@
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useMemo } from 'react';
 import { HiOutlineHome, HiOutlineBriefcase } from 'react-icons/hi2';
 import { IconType } from 'react-icons/lib';
@@ -17,7 +17,6 @@ const navLinks: NavLink[] = [
 ];
 
 export const useNavigation = () => {
-  const router = useRouter();
   const pathname = usePathname();
 
   return useMemo(() => {
