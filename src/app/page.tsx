@@ -1,15 +1,14 @@
 import { LuBriefcaseBusiness, LuDownload } from 'react-icons/lu';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+import { Button, TypewriterText } from '@/components';
 import images from '@/assets/images';
-import TypewriterText from '@/components/animated-intro-text';
 
 export default function Home() {
   return (
     <main className='full-page'>
       <section className='padding-inline'>
-        <div className='container flex flex-col items-center justify-between gap-8 rounded-r-lg border-neutral-500 sm:flex-row-reverse md:border-r-8 md:pr-8'>
-          <div className='mx-auto'>
+        <div className='container flex flex-col items-center justify-between gap-8 rounded-r-lg sm:flex-row-reverse  '>
+          <div className='sm:~mr-5/20'>
             <Image
               className='size-40 rounded-full border border-black object-cover sm:~size-48/80'
               src={images.profile}
@@ -21,7 +20,7 @@ export default function Home() {
             <h2 className='text-medium mb-2 ~text-lg/xl'>Hello,</h2>
             <h1 className='mb-2 font-bold ~text-3xl/6xl'>I&apos;m Victor</h1>
 
-            <h3 className='mx-auto sm:mx-0 mb-8 max-w-[18ch] font-bold ~text-3xl/6xl'>
+            <h3 className='mx-auto mb-8 max-w-[18ch] font-bold ~text-3xl/6xl sm:mx-0'>
               <TypewriterText />
             </h3>
             <p className='mx-auto mb-12 max-w-[50ch] text-neutral-800 ~text-base/lg sm:mx-0'>

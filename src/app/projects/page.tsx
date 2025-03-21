@@ -1,11 +1,12 @@
 'use client';
 
 import {
+  ProjectNav,
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
+} from '@/components';
 import { projects } from '@/lib/data';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -16,7 +17,6 @@ import { Keyboard, Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import { Swiper as SwiperProps } from 'swiper/types';
 import { AnimatePresence, motion } from 'motion/react';
-import ProjectNav from '@/components/project-nav';
 import { Ubuntu, DM_Sans } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
@@ -48,10 +48,10 @@ const Projects = () => {
 
   return (
     <main className='full-page relative z-[4]'>
-      <h1 className='absolute inset-x-0 top-2 text-center font-extrabold transition-all duration-300 ~text-3xl/5xl hover:drop-shadow-2xl'>
+      <h1 className='text-center font-extrabold transition-all duration-300 ~text-3xl/5xl selection:text-accent hover:drop-shadow-2xl'>
         Projects.
       </h1>
-      <section className='padding-inline ~mt-12/24 overflow-x-clip pb-5 sm:mt-16'>
+      <section className='padding-inline overflow-x-clip pb-5 ~mt-12/24 sm:mt-16'>
         <div className='container flex flex-col items-center justify-around gap-x-4 gap-y-8 sm:flex-row-reverse'>
           {/* Swiper with slides showing project image */}
           <div className='w-full sm:w-1/2'>
@@ -64,11 +64,17 @@ const Projects = () => {
               keyboard
             >
               {projects.map((project) => (
-                <SwiperSlide className='' key={project.num}>
-                  <Link
+                <SwiperSlide key={project.num}>
+                  <motion.a
+                    key={project.num}
                     href={project.url}
                     target='_blank'
                     className='link-cursor block overflow-hidden rounded-lg border'
+                    initial={{ filter: 'blur(20px)' }}
+                    whileInView={{
+                      filter: 'blur(0px)',
+                      transition: { duration: 0.5 },
+                    }}
                   >
                     <Image
                       className='size-full object-cover transition-transform duration-700 hover:scale-150'
@@ -78,7 +84,7 @@ const Projects = () => {
                       height={1080}
                       placeholder='blur'
                     />
-                  </Link>
+                  </motion.a>
                 </SwiperSlide>
               ))}
 

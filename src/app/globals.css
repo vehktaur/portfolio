@@ -103,6 +103,6 @@ body {
   }
 
   .full-page {
-    @apply min-h-[80vh] content-center;
+    @apply min-h-[92dvh] content-center;
   }
 }

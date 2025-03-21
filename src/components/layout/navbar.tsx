@@ -1,42 +1,49 @@
-import { Logo } from '@/assets/svgs';
-import Link from 'next/link';
-import NavLink from '@/components/ui/nav-link';
+'use client';
+
+import { useNavigation } from '@/hooks/use-navigation';
+import { cn } from '@/lib/utils';
+import { useRouter } from 'next/navigation';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
 const Navbar = () => {
-  const navLinks = [
-    { name: 'Home', href: '/' },
-    // { name: 'About', href: '/about' },
-    { name: 'Projects', href: '/projects' },
-    // { name: 'Contact', href: '/contact' },
-  ];
+  const { prevRoute, currentRoute, nextRoute } = useNavigation();
+
+  const { push } = useRouter();
+  const prev = () => {
+    push(prevRoute?.href || '');
+  };
+  const next = () => {
+    push(nextRoute?.href || '');
+  };
 
   return (
-    <header className='padding-inline py-6'>
-      <nav className='mx-auto flex max-w-7xl items-center justify-between'>
-        {/* Logo */}
-        <Link href='/'>
-          <Logo className='w-full object-contain ~max-w-28/40' />
-        </Link>
+    <nav className='fixed bottom-16 left-1/2 z-[999] flex -translate-x-1/2 transform items-center gap-5 rounded-full border border-zinc-600 bg-black/70 px-5 py-3 shadow drop-shadow-xl backdrop-blur-lg'>
+      <button
+        onClick={prev}
+        className={cn(
+          'grid size-8 place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 hover:scale-125',
+          { 'scale-0': !prevRoute },
+        )}
+      >
+        <FaChevronLeft className='size-2 text-secondary' />
+      </button>
 
-        {/* Navigation */}
-        <ul className='flex items-center ~gap-4/6'>
-          {navLinks.map(({ name, href }) => (
-            <li key={href}>
-              <NavLink
-                className='relative block font-medium after:absolute after:right-1/2 after:top-[110%] after:h-[2px] after:w-0 after:translate-x-1/2 after:rounded-full after:bg-zinc-800 transition-all duration-300 hover:text-accent'
-                activeClassName='after:w-3/4 hover:text-primary'
-                href={href}
-                exact
-              >
-                {name}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+      <p className='flex items-center justify-center gap-1 overflow-hidden text-sm font-medium text-secondary transition-all duration-300'>
+        {<currentRoute.Icon className='size-4' />}
 
-        {/* <Button>Hire Me</Button> */}
-      </nav>
-    </header>
+        <span> {currentRoute?.name}</span>
+      </p>
+
+      <button
+        onClick={next}
+        className={cn(
+          'grid size-8 place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 hover:scale-125',
+          { 'scale-0': !nextRoute },
+        )}
+      >
+        <FaChevronRight className='size-2 text-secondary' />
+      </button>
+    </nav>
   );
 };
 export default Navbar;

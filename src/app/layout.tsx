@@ -6,12 +6,14 @@ import 'swiper/css';
 import { Poppins } from 'next/font/google';
 
 // component imports
-import Navbar from '@/components/layout/navbar';
-import Footer from '@/components/layout/footer';
-import PageTransition from '@/components/layout/page-transition';
-import StairTransition from '@/components/layout/page-transition/stair-transition';
-import { Particles } from '@/components/ui/particles';
-
+import {
+  Header,
+  Footer,
+  Particles,
+  PageTransition,
+  StairTransition,
+  Navbar,
+} from '@/components';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -41,9 +43,10 @@ export default function RootLayout({
           color={'#000'}
           refresh
         />
-        <Navbar />
+        <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
+        <Navbar />
         <Footer />
       </body>
     </html>
