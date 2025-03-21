@@ -17,11 +17,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='fixed bottom-16 left-1/2 z-[999] flex -translate-x-1/2 transform items-center gap-5 rounded-full border border-zinc-600 bg-black/70 px-5 py-3 shadow drop-shadow-xl backdrop-blur-lg'>
+    <nav className='fixed bottom-16 left-1/2 z-[999] flex -translate-x-1/2 transform items-center rounded-full border border-zinc-600 bg-black/70 py-3 shadow drop-shadow-xl backdrop-blur-lg ~gap-3/5 ~px-4/5'>
       <button
         onClick={prev}
         className={cn(
-          'grid size-8 place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 hover:scale-125',
+          'grid place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 ~size-5/8 hover:scale-125',
           { 'scale-0': !prevRoute },
         )}
       >
@@ -37,7 +37,7 @@ const Navbar = () => {
       <button
         onClick={next}
         className={cn(
-          'grid size-8 place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 hover:scale-125',
+          'grid place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 ~size-5/8 hover:scale-125',
           { 'scale-0': !nextRoute },
         )}
       >

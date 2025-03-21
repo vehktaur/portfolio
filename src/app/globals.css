@@ -103,6 +103,6 @@ body {
   }
 
   .full-page {
-    @apply min-h-[92dvh] content-center;
+    @apply min-h-[92dvh] content-center pb-20 ~pt-20/24;
   }
 }

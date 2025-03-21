@@ -47,12 +47,12 @@ const Projects = () => {
   };
 
   return (
-    <main className='full-page relative z-[4]'>
-      <h1 className='text-center font-extrabold transition-all duration-300 ~text-3xl/5xl selection:text-accent hover:drop-shadow-2xl'>
+    <main className='full-page relative'>
+      <h1 className='text-center font-extrabold transition-all duration-300 ~text-2xl/5xl selection:text-accent hover:drop-shadow-2xl'>
         Projects.
       </h1>
-      <section className='padding-inline overflow-x-clip pb-5 ~mt-12/24 sm:mt-16'>
-        <div className='container flex flex-col items-center justify-around gap-x-4 gap-y-8 sm:flex-row-reverse'>
+      <section className='padding-inline overflow-x-clip pb-5 ~mt-8/16'>
+        <div className='container flex flex-col items-center justify-around gap-x-4 gap-y-5 sm:flex-row-reverse'>
           {/* Swiper with slides showing project image */}
           <div className='w-full sm:w-1/2'>
             <Swiper
@@ -92,7 +92,9 @@ const Projects = () => {
               <ProjectNav />
             </Swiper>
           </div>
+
           <hr className='mx-auto h-[3px] w-1/2 flex-shrink-0 rounded-full border-none bg-primary sm:h-40 sm:w-[3px]' />
+
           {/* Project Details */}
           <div className='overflow-clip [overflow-clip-margin:3rem;]'>
             <AnimatePresence mode='wait'>
