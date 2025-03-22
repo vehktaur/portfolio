@@ -1,4 +1,5 @@
-import { LuBriefcaseBusiness, LuDownload } from 'react-icons/lu';
+import { LuCalendarClock } from 'react-icons/lu';
+import { HiOutlineDocumentDownload } from 'react-icons/hi';
 import Image from 'next/image';
 import { Button, TypewriterText } from '@/components';
 import images from '@/assets/images';
@@ -33,8 +34,8 @@ export default function Home() {
                   href='https://cal.com/victor-akhihiero/meet-30min'
                   target='_blank'
                 >
-                  Hire me
-                  <LuBriefcaseBusiness className='mt-1' />
+                  Let&apos;s Meet
+                  <LuCalendarClock />
                 </a>
               </Button>
 
@@ -45,7 +46,7 @@ export default function Home() {
                   target='_blank'
                 >
                   Download CV
-                  <LuDownload />
+                  <HiOutlineDocumentDownload />
                 </a>
               </Button>
             </div>
