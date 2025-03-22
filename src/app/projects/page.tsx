@@ -32,17 +32,15 @@ const dmSans = DM_Sans({
 
 const Projects = () => {
   const [project, setProject] = useState(projects[0]);
-  const [direction, setDirection] = useState('ltr');
+  const [direction, setDirection] = useState<1 | -1>(1);
 
   const handleSlideChange = (swiper: SwiperProps) => {
     const { activeIndex, previousIndex } = swiper;
-
     if (activeIndex < previousIndex) {
-      setDirection('rtl');
+      setDirection(-1); // backwards
     } else {
-      setDirection('ltr');
+      setDirection(1); // forwards
     }
-
     setProject(projects[activeIndex]);
   };
 
@@ -51,7 +49,7 @@ const Projects = () => {
       <h1 className='text-center font-extrabold transition-all duration-300 ~text-2xl/5xl selection:text-accent hover:drop-shadow-2xl'>
         Projects.
       </h1>
-      <section className='padding-inline overflow-x-clip pb-5 ~mt-8/16'>
+      <section className='padding-inline overflow-x-clip ~mt-8/16'>
         <div className='container flex flex-col items-center justify-around gap-x-4 gap-y-5 sm:flex-row-reverse'>
           {/* Swiper with slides showing project image */}
           <div className='w-full sm:w-1/2'>
@@ -69,10 +67,14 @@ const Projects = () => {
                     key={project.num}
                     href={project.url}
                     target='_blank'
-                    className='link-cursor block overflow-hidden rounded-lg border'
-                    initial={{ filter: 'blur(20px)' }}
+                    className={cn(
+                      'link-cursor block overflow-hidden rounded-lg border',
+                      direction === 1 ? 'origin-right' : 'origin-left',
+                    )}
+                    initial={{ filter: 'blur(20px)', scaleX: 0.75 }}
                     whileInView={{
                       filter: 'blur(0px)',
+                      scaleX: 1,
                       transition: { duration: 0.5 },
                     }}
                   >
@@ -97,12 +99,12 @@ const Projects = () => {
 
           {/* Project Details */}
           <div className='overflow-clip [overflow-clip-margin:3rem;]'>
-            <AnimatePresence mode='wait'>
+            <AnimatePresence custom={direction} mode='wait'>
               <motion.div
                 key={project.num}
-                initial={{ opacity: 0, x: direction === 'ltr' ? 200 : -200 }}
+                initial={{ opacity: 0, x: direction * 200 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: direction === 'ltr' ? -200 : 200 }}
+                exit={{ opacity: 0, x: direction * -200 }}
                 transition={{ ease: 'easeInOut' }}
               >
                 {/* project number */}

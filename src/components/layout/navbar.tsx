@@ -18,23 +18,23 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='fixed bottom-16 left-1/2 z-[999] flex ~w-40/48 -translate-x-1/2 items-center justify-evenly rounded-full border border-zinc-600 bg-black/70 py-3 shadow drop-shadow-xl backdrop-blur-lg'>
+    <nav className='fixed bottom-16 left-1/2 z-[999] flex -translate-x-1/2 items-center justify-evenly rounded-full border border-zinc-600 bg-black/70 py-3 shadow drop-shadow-xl backdrop-blur-lg ~w-40/48'>
       <button
+        disabled={!prevRoute?.href}
         onClick={prev}
         className={cn(
-          'grid place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 ~size-6/8 hover:scale-125',
-          { 'cursor-not-allowed': !prevRoute?.href },
+          'grid place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 ~size-6/8 hover:scale-125 disabled:cursor-not-allowed',
         )}
       >
         <FaChevronLeft className='size-2 text-secondary' />
       </button>
 
-      <AnimatePresence>
+      <AnimatePresence mode='wait'>
         <motion.p
           key={currentRoute.href}
-          initial={{ opacity: 0, y: 8, scale: 0.5 }}
+          initial={{ opacity: 0, y: 8, scale: 0.75 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -8, scale: 0.5 }}
+          exit={{ opacity: 0, y: -8, scale: 0.75 }}
           className='flex items-center justify-center gap-1 overflow-hidden text-sm font-medium text-secondary'
         >
           {<currentRoute.Icon className='size-4' />}
@@ -43,10 +43,10 @@ const Navbar = () => {
         </motion.p>
       </AnimatePresence>
       <button
+        disabled={!nextRoute?.href}
         onClick={next}
         className={cn(
-          'grid place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 ~size-6/8 hover:scale-125',
-          { 'cursor-not-allowed': !nextRoute?.href },
+          'grid place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 ~size-6/8 hover:scale-125 disabled:cursor-not-allowed',
         )}
       >
         <FaChevronRight className='size-2 text-secondary' />

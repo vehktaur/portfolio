@@ -85,7 +85,7 @@ body {
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
+    @apply overflow-x-clip bg-background text-foreground;
   }
 }
 

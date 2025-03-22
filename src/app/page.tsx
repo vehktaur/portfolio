@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className='full-page'>
       <section className='padding-inline'>
-        <div className='container flex flex-col items-center justify-between gap-8 rounded-r-lg sm:flex-row-reverse  '>
+        <div className='container flex flex-col items-center justify-between gap-8 rounded-r-lg sm:flex-row-reverse'>
           <div className='sm:~mr-5/20'>
             <Image
               className='size-40 rounded-full border border-black object-cover sm:~size-48/80'
@@ -17,12 +17,12 @@ export default function Home() {
             />
           </div>
           <div className='text-center sm:text-left'>
-            <h2 className='text-medium mb-2 ~text-lg/xl'>Hello,</h2>
-            <h1 className='mb-2 font-bold ~text-3xl/6xl'>I&apos;m Victor</h1>
+            <p className='text-medium mb-2 ~text-lg/xl'>Hello,</p>
+            <p className='mb-2 font-bold ~text-3xl/6xl'>I&apos;m Victor</p>
 
-            <h3 className='mx-auto mb-8 max-w-[18ch] font-bold ~text-3xl/6xl sm:mx-0'>
-              <TypewriterText />
-            </h3>
+            <div className='mx-auto mb-8 max-w-[18ch] font-bold ~text-3xl/6xl sm:mx-0'>
+              <TypewriterText as='h1' />
+            </div>
             <p className='mx-auto mb-12 max-w-[50ch] text-neutral-800 ~text-base/lg sm:mx-0'>
               I am a skilled and passionate web developer with experience in
               creating visually appealing and user-friendly websites.
