@@ -1,0 +1,18 @@
+export enum Technologies {
+  NextJS = 'NextJS',
+  ReactJS = 'ReactJS',
+  TailwindCSS = 'TailwindCSS',
+  REST_APIs = 'REST APIs',
+  Vite = 'Vite',
+  JavaScript = 'JavaScript',
+  TypeScript = 'TypeScript',
+  RHF = 'RHF',
+  HTML5 = 'HTML5',
+  CSS3 = 'CSS3',
+  React_Router = 'React Router',
+  React_Google_Maps = 'React Google Maps',
+  Framer_Motion = 'Framer Motion',
+  GSAP = 'GSAP',
+  Zod = 'Zod',
+  MongoDB = 'MongoDB',
+}
