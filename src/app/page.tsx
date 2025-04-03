@@ -41,8 +41,7 @@ export default function Home() {
 
               <Button asChild>
                 <a
-                  download='VICTOR AKHIHIERO.pdf'
-                  href='/victor_akhihiero.pdf'
+                  href='https://drive.google.com/file/d/1I0fNLKKSeVuojDAcgp9JKsDtLSzD7fXu/view?usp=sharing'
                   target='_blank'
                 >
                   Download CV
