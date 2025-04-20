@@ -5,29 +5,49 @@ import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
 import { useRouter } from 'next/navigation';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
+import { IconType } from 'react-icons/lib';
 
-const Navbar = () => {
+const NavButton = ({
+  disabled,
+  onClick,
+  className,
+  Icon,
+}: {
+  disabled: boolean;
+  onClick: () => void;
+  className?: string;
+  Icon: IconType;
+}) => {
+  return (
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      className={cn(
+        'grid place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 ~size-6/8 hover:scale-125 disabled:hidden',
+        className,
+      )}
+    >
+      <Icon className='size-2 text-secondary' />
+    </button>
+  );
+};
+
+export default function Navbar() {
   const { prevRoute, currentRoute, nextRoute } = useNavigation();
+  const hasPrev = !!prevRoute?.href;
+  const hasNext = !!nextRoute?.href;
 
   const { push } = useRouter();
   const prev = () => {
-    if (prevRoute?.href) push(prevRoute.href);
+    if (hasPrev) push(prevRoute.href);
   };
   const next = () => {
-    if (nextRoute?.href) push(nextRoute.href);
+    if (hasNext) push(nextRoute.href);
   };
 
   return (
-    <nav className='fixed bottom-16 left-1/2 z-[999] flex -translate-x-1/2 items-center justify-evenly rounded-full border border-zinc-600 bg-black/70 py-3 shadow drop-shadow-xl backdrop-blur-lg ~w-40/48'>
-      <button
-        disabled={!prevRoute?.href}
-        onClick={prev}
-        className={cn(
-          'grid place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 ~size-6/8 hover:scale-125 disabled:cursor-not-allowed',
-        )}
-      >
-        <FaChevronLeft className='size-2 text-secondary' />
-      </button>
+    <nav className='fixed bottom-16 left-1/2 z-[999] flex w-fit -translate-x-1/2 items-center justify-center rounded-full border border-zinc-600 bg-black/70 px-5 py-3 shadow drop-shadow-xl backdrop-blur-lg'>
+      <NavButton disabled={!hasPrev} onClick={prev} Icon={FaChevronLeft} />
 
       <AnimatePresence mode='wait'>
         <motion.p
@@ -35,23 +55,15 @@ const Navbar = () => {
           initial={{ opacity: 0, y: 8, scale: 0.75 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -8, scale: 0.75 }}
-          className='flex items-center justify-center gap-1 overflow-hidden text-sm font-medium text-secondary'
+          className='flex items-center justify-center gap-1 overflow-hidden px-3 text-sm font-medium text-secondary'
         >
           {<currentRoute.Icon className='size-4' />}
 
           <span> {currentRoute?.name}</span>
         </motion.p>
       </AnimatePresence>
-      <button
-        disabled={!nextRoute?.href}
-        onClick={next}
-        className={cn(
-          'grid place-items-center rounded-full border border-zinc-600 bg-black/50 transition-all duration-300 ~size-6/8 hover:scale-125 disabled:cursor-not-allowed',
-        )}
-      >
-        <FaChevronRight className='size-2 text-secondary' />
-      </button>
+
+      <NavButton disabled={!hasNext} onClick={next} Icon={FaChevronRight} />
     </nav>
   );
-};
-export default Navbar;
+}
