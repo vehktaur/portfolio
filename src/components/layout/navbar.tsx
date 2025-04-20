@@ -55,7 +55,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: 8, scale: 0.75 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -8, scale: 0.75 }}
-          className='flex items-center justify-center gap-1 overflow-hidden px-3 text-sm font-medium text-secondary'
+          className='flex items-center justify-center gap-1 overflow-hidden mx-3 text-sm font-medium text-secondary'
         >
           {<currentRoute.Icon className='size-4' />}
 
