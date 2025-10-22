@@ -7,6 +7,7 @@ import tasky from './project pics/tasky.png';
 import orenda from './project pics/orenda.png';
 import zummey from './project pics/zummey.jpeg';
 import hotel_rank from './project pics/hotel_rank.png';
+import hoobank from './project pics/hoobank.png';
 
 const images = {
   profile,
@@ -18,6 +19,7 @@ const images = {
   zummey,
   hotel_rank,
   orenda,
+  hoobank,
 };
 
 export default images;

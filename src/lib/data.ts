@@ -1,25 +1,7 @@
 import images from '@/assets/images';
-import { Technologies } from './enums';
+import { Project } from '@/types';
 
-const {
-  ReactJS,
-  REST_APIs,
-  HTML5,
-  CSS3,
-  TailwindCSS,
-  TypeScript,
-  JavaScript,
-  NextJS,
-  Vite,
-  React_Router,
-  React_Google_Maps,
-  RHF,
-  GSAP,
-  Framer_Motion,
-  MongoDB,
-} = Technologies;
-
-export const projects = [
+export const projects: Project[] = [
   {
     num: '一', // 1
     title: 'Stressless Movers',
@@ -27,9 +9,8 @@ export const projects = [
       'Built a feature-rich website for a moving company to streamline service inquiries, custom quote generation, and improve customer engagement through an interactive and visually appealing design.',
     url: 'https://www.stresslessmover.com/',
     category: 'Professional Project',
-    technologies: [ReactJS, JavaScript, TailwindCSS, REST_APIs],
+    technologies: ['ReactJS', 'JavaScript', 'TailwindCSS', 'REST APIs'],
     image: images.stressless,
-    live: 'https://www.stresslessmover.com/',
     github: 'https://github.com/vehktaur/stressless-movers',
   },
   {
@@ -39,9 +20,8 @@ export const projects = [
       'Developed an online platform for psychiatric practitioners and caregivers using React and Tailwind CSS, increasing accessibility and usability.',
     url: 'https://orendapsych.com/',
     category: 'Professional Project',
-    technologies: [ReactJS, TailwindCSS, GSAP, RHF, REST_APIs],
+    technologies: ['ReactJS', 'TailwindCSS', 'GSAP', 'RHF', 'REST APIs'],
     image: images.orenda,
-    live: 'https://orendapsych.com/',
     github: 'https://github.com/vehktaur/orenda',
   },
   {
@@ -51,9 +31,8 @@ export const projects = [
       'Developed a responsive website for a cleaning service, providing an intuitive interface for service bookings and showcasing the company’s offerings.',
     url: 'https://www.mdeservicestnfinest.com/',
     category: 'Professional Project',
-    technologies: [ReactJS, TailwindCSS, REST_APIs],
+    technologies: ['ReactJS', 'TailwindCSS', 'REST APIs'],
     image: images.mes,
-    live: 'https://www.mdeservicestnfinest.com/',
     github: 'https://github.com/vehktaur/mes-cleaning',
   },
   {
@@ -63,9 +42,8 @@ export const projects = [
       'Developed a responsive logistics website using ReactJS and Tailwind CSS to improve user experience and streamline online service requests.',
     url: 'https://zummey.com/',
     category: 'Professional Project',
-    technologies: [ReactJS, Vite, TailwindCSS],
+    technologies: ['ReactJS', 'Vite', 'TailwindCSS'],
     image: images.zummey,
-    live: 'https://zummey.com/',
     github: 'https://github.com/vehktaur/zummey',
   },
   {
@@ -76,15 +54,14 @@ export const projects = [
     url: 'http://darklogs.vercel.app/',
     category: 'Personal Project',
     technologies: [
-      NextJS,
-      TypeScript,
-      TailwindCSS,
-      Framer_Motion,
-      RHF,
-      MongoDB,
+      'NextJS',
+      'TypeScript',
+      'TailwindCSS',
+      'Framer Motion',
+      'RHF',
+      'MongoDB',
     ],
     image: images.darklogs,
-    live: 'http://darklogs.vercel.app/',
     github: 'https://github.com/vehktaur/darklogs',
   },
   {
@@ -94,9 +71,8 @@ export const projects = [
       'Developed a task management app using ReactJS and TypeScript, allowing users to organize tasks efficiently with real-time task updates.',
     url: 'https://tasky-vehktaur.vercel.app/',
     category: 'Personal Project',
-    technologies: [NextJS, TypeScript, TailwindCSS, RHF],
+    technologies: ['NextJS', 'TypeScript', 'TailwindCSS', 'RHF'],
     image: images.tasky,
-    live: 'https://tasks-vehktaur.vercel.app/',
     github: 'https://github.com/vehktaur/v_tasks',
   },
   {
@@ -107,15 +83,14 @@ export const projects = [
     url: 'https://hotel-ranking.vercel.app/',
     category: 'Personal Project',
     technologies: [
-      ReactJS,
-      TypeScript,
-      TailwindCSS,
-      React_Router,
-      React_Google_Maps,
-      RHF,
+      'ReactJS',
+      'TypeScript',
+      'TailwindCSS',
+      'React Router',
+      'React Google Maps',
+      'RHF',
     ],
     image: images.hotel_rank,
-    live: 'https://hotel-ranking.vercel.app/',
     github: 'https://github.com/vehktaur/hotel-rank',
   },
   {
@@ -125,9 +100,19 @@ export const projects = [
       'Designed and developed a quiz app to test users on various topics. Implemented features like timed quizzes and score tracking.',
     url: 'https://squiz-vehktaur.netlify.app/',
     category: 'Personal Project',
-    technologies: [HTML5, CSS3, JavaScript],
+    technologies: ['HTML5', 'CSS3', 'JavaScript'],
     image: images.squiz,
-    live: 'https://squiz-vehktaur.netlify.app/',
     github: 'https://github.com/vehktaur/squiz',
+  },
+  {
+    num: '九', // 9
+    title: 'HooBank',
+    description:
+      'A sleek and responsive landing page for a fictional digital banking platform. Having a modern UI with a futuristic theme, smooth gradients, and clean typography.',
+    url: 'https://hoobank-vehktaur.vercel.app/',
+    category: 'Personal Project',
+    technologies: ['NextJS', 'TypeScript', 'TailwindCSS', 'GSAP'],
+    image: images.hoobank,
+    github: 'https://github.com/vehktaur/hoobank',
   },
 ];

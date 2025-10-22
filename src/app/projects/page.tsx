@@ -108,14 +108,14 @@ const Projects = () => {
                 transition={{ ease: 'easeInOut' }}
               >
                 {/* project number */}
-                <h2 className='font-extrabold ~text-xl/4xl ~mb-2/4'>
+                <h2 className='font-extrabold ~text-xl/4xl ~mb-2/4 selection:text-destructive'>
                   {project.num}
                 </h2>
 
                 {/* project title */}
                 <h1
                   className={cn(
-                    'font-semibold tracking-tight text-accent ~text-3xl/6xl ~mb-2/4',
+                    'font-semibold tracking-tight text-accent ~text-3xl/6xl ~mb-2/4 selection:text-primary',
                     dmSans.className,
                   )}
                 >
@@ -152,7 +152,7 @@ const Projects = () => {
                       <TooltipTrigger>
                         <Link
                           className='grid place-items-center rounded-full border transition-all duration-300 ~size-9/11 hover:scale-105'
-                          href={project.live}
+                          href={project.url}
                           target='_blank'
                         >
                           <LuExternalLink className='~size-5/6' />
