@@ -17,7 +17,7 @@ export default function Home() {
               alt='Victor Akhihiero'
             />
           </div>
-          <div className='text-center sm:text-left'>
+          <div className='text-center sm:text-left selection:text-accent'>
             <p className='text-medium mb-2 ~text-lg/xl'>Hello,</p>
             <p className='mb-2 font-bold ~text-3xl/6xl'>I&apos;m Victor</p>
 
