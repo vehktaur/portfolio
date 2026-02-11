@@ -164,22 +164,24 @@ const Projects = () => {
                     </Tooltip>
                   </TooltipProvider>
 
-                  <TooltipProvider>
-                    <Tooltip delayDuration={100}>
-                      <TooltipTrigger>
-                        <Link
-                          className='grid place-items-center rounded-full border transition-all duration-300 ~size-9/11 hover:scale-105'
-                          href={project.github}
-                          target='_blank'
-                        >
-                          <FaGithub className='~size-5/6' />
-                        </Link>
-                      </TooltipTrigger>
-                      <TooltipContent side='bottom' sideOffset={10}>
-                        Github repo
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                  {project.github && (
+                    <TooltipProvider>
+                      <Tooltip delayDuration={100}>
+                        <TooltipTrigger>
+                          <Link
+                            className='grid place-items-center rounded-full border transition-all duration-300 ~size-9/11 hover:scale-105'
+                            href={project.github}
+                            target='_blank'
+                          >
+                            <FaGithub className='~size-5/6' />
+                          </Link>
+                        </TooltipTrigger>
+                        <TooltipContent side='bottom' sideOffset={10}>
+                          Github repo
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  )}
                 </div>
               </motion.div>
             </AnimatePresence>

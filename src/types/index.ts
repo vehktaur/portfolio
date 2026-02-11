@@ -16,7 +16,10 @@ type Technologies =
   | 'Framer Motion'
   | 'GSAP'
   | 'Zod'
-  | 'MongoDB';
+  | 'MongoDB'
+  | 'AuthJS'
+  | 'Tanstack Router'
+  | 'Ant Design';
 
 export interface Project {
   num: string;
@@ -26,5 +29,5 @@ export interface Project {
   category: string;
   technologies: Technologies[];
   image: StaticImageData;
-  github: string;
+  github?: string;
 }

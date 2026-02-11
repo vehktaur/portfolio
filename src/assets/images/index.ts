@@ -8,6 +8,9 @@ import orenda from './project pics/orenda.png';
 import zummey from './project pics/zummey.jpeg';
 import hotel_rank from './project pics/hotel_rank.png';
 import hoobank from './project pics/hoobank.png';
+import orenda_forms from './project pics/orenda_forms.png';
+import orenda_portal from './project pics/orenda_portal.png';
+import gtc from './project pics/gtc.png';
 
 const images = {
   profile,
@@ -20,6 +23,9 @@ const images = {
   hotel_rank,
   orenda,
   hoobank,
+  orenda_forms,
+  orenda_portal,
+  gtc,
 };
 
 export default images;
