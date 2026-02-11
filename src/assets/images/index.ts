@@ -11,6 +11,8 @@ import hoobank from './project pics/hoobank.png';
 import orenda_forms from './project pics/orenda_forms.png';
 import orenda_portal from './project pics/orenda_portal.png';
 import gtc from './project pics/gtc.png';
+import keysystem from './project pics/keysystem.png';
+import expert_listing from './project pics/expert_listing.png';
 
 const images = {
   profile,
@@ -26,6 +28,8 @@ const images = {
   orenda_forms,
   orenda_portal,
   gtc,
+  keysystem,
+  expert_listing,
 };
 
 export default images;

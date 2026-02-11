@@ -11,7 +11,6 @@ export const projects: Project[] = [
     category: 'Professional Project',
     technologies: ['ReactJS', 'JavaScript', 'TailwindCSS', 'REST APIs'],
     image: images.stressless,
-    github: 'https://github.com/vehktaur/stressless-movers',
   },
   {
     num: '二', // 2
@@ -22,7 +21,6 @@ export const projects: Project[] = [
     category: 'Professional Project',
     technologies: ['ReactJS', 'TailwindCSS', 'GSAP', 'RHF', 'REST APIs'],
     image: images.orenda,
-    github: 'https://github.com/vehktaur/orenda',
   },
   {
     num: '三', // 3
@@ -86,7 +84,6 @@ export const projects: Project[] = [
     category: 'Professional Project',
     technologies: ['ReactJS', 'TailwindCSS', 'REST APIs'],
     image: images.mes,
-    github: 'https://github.com/vehktaur/mes-cleaning',
   },
   {
     num: '七', // 7
@@ -97,7 +94,6 @@ export const projects: Project[] = [
     category: 'Professional Project',
     technologies: ['ReactJS', 'Vite', 'TailwindCSS'],
     image: images.zummey,
-    github: 'https://github.com/vehktaur/zummey',
   },
   {
     num: '八', // 8
@@ -144,7 +140,7 @@ export const projects: Project[] = [
       'RHF',
     ],
     image: images.hotel_rank,
-    github: 'https://github.com/vehktaur/hotel-rank',
+    github: 'https://github.com/vehktaur/hotel-ranking',
   },
   {
     num: '十一', // 11
@@ -155,10 +151,26 @@ export const projects: Project[] = [
     category: 'Personal Project',
     technologies: ['HTML5', 'CSS3', 'JavaScript'],
     image: images.squiz,
-    github: 'https://github.com/vehktaur/squiz',
+    github: 'https://github.com/vehktaur/SQUIZ',
   },
   {
     num: '十二', // 12
+    title: 'Keysystem',
+    description:
+      'Developed a home website for KeySystem Technology Limited, highlighting their vision and mission and positioning them as a trusted advisor delivering bespoke banking and enterprise IT solutions across global markets.',
+    url: 'https://www.keysystemltd.com/',
+    category: 'Professional Project',
+    technologies: [
+      'NextJS',
+      'TypeScript',
+      'TailwindCSS',
+      'GSAP',
+      'Framer Motion',
+    ],
+    image: images.keysystem,
+  },
+  {
+    num: '十三', // 13
     title: 'HooBank',
     description:
       'A sleek and responsive landing page for a fictional digital banking platform. Having a modern UI with a futuristic theme, smooth gradients, and clean typography.',
@@ -167,5 +179,22 @@ export const projects: Project[] = [
     technologies: ['NextJS', 'TypeScript', 'TailwindCSS', 'GSAP'],
     image: images.hoobank,
     github: 'https://github.com/vehktaur/hoobank',
+  },
+  {
+    num: '十四', // 14
+    title: 'Expert Listing',
+    description:
+      'A clean analytics dashboard UI for a listing platform, featuring sales charts, KPIs, and property cards in a modern admin layout.',
+    url: 'https://expert-listing-vehktaur.vercel.app/',
+    category: 'Personal Project',
+    technologies: [
+      'NextJS',
+      'TypeScript',
+      'TailwindCSS',
+      'Framer Motion',
+      'ReChartJS',
+    ],
+    image: images.expert_listing,
+    github: 'https://github.com/vehktaur/expert-listing',
   },
 ];

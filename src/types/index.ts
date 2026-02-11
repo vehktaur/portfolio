@@ -19,7 +19,8 @@ type Technologies =
   | 'MongoDB'
   | 'AuthJS'
   | 'Tanstack Router'
-  | 'Ant Design';
+  | 'Ant Design'
+  | 'ReChartJS';
 
 export interface Project {
   num: string;
